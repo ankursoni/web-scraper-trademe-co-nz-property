@@ -1,6 +1,6 @@
 # webscrappe-trademe-co-nz-property
 
-[![Build Status](https://img.shields.io/github/workflow/status/ankursoni/webscrappe-trademe-co-nz-property/build)](/actions/workflows/ci.yml)
+[![Build Status](https://img.shields.io/github/workflow/status/ankursoni/webscrappe-trademe-co-nz-property/build)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/ankursoni/webscrappe-trademe-co-nz-property)](/LICENSE)
 
 > Web scrapping project for trademe.co.nz/property
