@@ -84,12 +84,12 @@ python -m search.main auckland 1 false result.csv
 ```
 
 When running as an api, use the following endpoints:
-1. 'search-without-detail/<city>/<total_pages' searching without property detail.
+1. 'search-without-detail/{city}/{total number of pages}' searching without property detail.
 ```sh
 # example
 curl http://localhost:8080/search-with-detail/auckland/1
 ```
-2. '/search-with-detail/<city>/<total_pages>' searching with property detail.
+2. '/search-with-detail/{city}/{total number of pages}' searching with property detail.
 ```sh
 # example
 curl http://localhost:8080/search-with-detail/auckland/1
