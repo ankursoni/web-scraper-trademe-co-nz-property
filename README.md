@@ -7,7 +7,7 @@
 <!-- [![Build Status](https://img.shields.io/github/workflow/status/ankursoni/webscrappe-trademe-co-nz-property/build)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/ci.yml) -->
 
 > Web scrapping project for trademe.co.nz/property
-https://app.codecov.io/gh/ankursoni/+#:~:text=webscrappe%2Dtrademe%2Dco%2Dnz%2Dproperty
+
 
 ## Built With
 
