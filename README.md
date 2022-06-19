@@ -20,7 +20,7 @@
 To get a local copy up and running, follow these simple example steps.
 
 ### Prerequisites
-Python v3.9.13
+Python v3.9.13  
 Optionally, Docker
 
 ### Setup
