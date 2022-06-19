@@ -1,6 +1,7 @@
 # webscrappe-trademe-co-nz-property
 
 [![build](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/ci.yml/badge.svg)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property/branch/main/graph/badge.svg)](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property)
 [![License](https://img.shields.io/github/license/ankursoni/webscrappe-trademe-co-nz-property)](/LICENSE)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 <!-- [![Build Status](https://img.shields.io/github/workflow/status/ankursoni/webscrappe-trademe-co-nz-property/build)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/ci.yml) -->
@@ -98,7 +99,7 @@ curl http://localhost:8080/search-with-detail/auckland/1
 ### Run tests
 ```sh
 # run unit tests
-pytest --cov=search -v
+pytest -v --cov=search
 ```
 
 ### Deployment

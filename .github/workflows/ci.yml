@@ -21,7 +21,11 @@ jobs:
           pylint ./search
       - name: Test with pytest
         run: |
-          pytest --cov=search -v
+          pytest -v --cov=search --cov-report=xml:coverage.xml
+      - name: Upload coverage report to codecov.io
+        uses: codecov/codecov-action@v2
+        with:
+          files: ./coverage.xml
 
   docker:
     runs-on: ubuntu-latest
