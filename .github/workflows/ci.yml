@@ -40,4 +40,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: webscrappe-trademe-co-nz-property:mvp
+          tags: ankursoni/webscrappe-trademe-co-nz-property:mvp

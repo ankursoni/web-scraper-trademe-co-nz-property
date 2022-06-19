@@ -47,7 +47,7 @@ pylint ./search
 # argument 2 = total number of pages
 # argument 3 = true or false (default) to do search 'with detail' or 'without detail'
 # argument 4 = output file (default = result.csv)
-# e.g. python -m search.main <city> <total pages> <true or false>
+# e.g. python -m search.main <city> <total pages> <true or false> <file.csv>
 python -m search.main auckland 1 false result.csv
 ```
 2. Or, run as web api server
@@ -68,7 +68,27 @@ docker rm webscrappe
 ```
 
 ### Usage
-TODO:
+When running as a command line interface (cli)
+```sh
+# argument 1 = city
+# argument 2 = total number of pages
+# argument 3 = true or false (default) to do search 'with detail' or 'without detail'
+# argument 4 = output file (default = result.csv)
+# e.g. python -m search.main <city> <total pages> <true or false> <file.csv>
+python -m search.main auckland 1 false result.csv
+```
+
+When running as an api, use the following endpoints:
+1. 'search-without-detail/<city>/<total_pages' searching without property detail.
+```sh
+# example
+curl http://localhost:8080/search-with-detail/auckland/1
+```
+2. '/search-with-detail/<city>/<total_pages>' searching with property detail.
+```sh
+# example
+curl http://localhost:8080/search-with-detail/auckland/1
+```
 
 ### Run tests
 ```sh

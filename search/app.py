@@ -16,7 +16,7 @@ def welcome():
 @app.route('/search-without-detail')
 @app.route('/search-without-detail/<city>/<int:total_pages>', methods=['GET'])
 def search_without_detail(city=core.DEFAULT_CITY, total_pages=1):
-    ''' Function om 'search-without-detail/<city>/<total_pages' searching
+    ''' Function on 'search-without-detail/<city>/<total_pages' searching
     without property detail. '''
     result = core.search_without_detail(city=city, total_pages=total_pages)
     csv = core.format_csv(result)
