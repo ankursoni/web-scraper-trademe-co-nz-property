@@ -39,7 +39,7 @@ def search_with_detail(city=core.DEFAULT_CITY, total_pages=1):
 
 def main():
     ''' Entry point if called as an executable. '''
-    app.run(port=8080)
+    app.run(host='0.0.0.0', port=8080)
 
 
 if __name__ == '__main__':
