@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "webscrappe-trademe-co-nz-property.fullname" . }}
+  labels:
+    {{- include "webscrappe-trademe-co-nz-property.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "webscrappe-trademe-co-nz-property.selectorLabels" . | nindent 4 }}

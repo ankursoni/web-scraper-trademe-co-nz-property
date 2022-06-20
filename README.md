@@ -80,6 +80,17 @@ docker stop webscrappe
 docker rm webscrappe
 ```
 
+4. Or, run in kubernetes cluster
+```sh
+# upgrade or install helm chart, if not preset
+helm upgrade -i webscrappe-trademe-co-nz-property webscrappe-trademe-co-nz-property \
+	-n webscrappe --create-namespace
+
+# stop and remove helm chart and namespace
+helm uninstall webscrappe-trademe-co-nz-property -n webscrappe
+kubectl delete namespace webscrappe
+```
+
 ### Usage
 When running as a command line interface (cli)
 ```sh
@@ -92,12 +103,12 @@ python -m search.main auckland 1 false result.csv
 ```
 
 When running as an api, use the following endpoints:
-1. 'search-without-detail/`{city}`/`{total number of pages}`' searching without property detail.
+1. 'http://`{domain name}`/search-without-detail/`{city}`/`{total number of pages}`' searching without property detail.
 ```sh
 # example
 curl http://localhost:8080/search-with-detail/auckland/1
 ```
-2. '/search-with-detail/`{city}`/`{total number of pages}`' searching with property detail.
+2. 'http://`{domain name}`/search-with-detail/`{city}`/`{total number of pages}`' searching with property detail.
 ```sh
 # example
 curl http://localhost:8080/search-with-detail/auckland/1
