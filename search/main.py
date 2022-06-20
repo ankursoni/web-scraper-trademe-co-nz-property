@@ -65,8 +65,8 @@ def main():
     )
     arg_output_file = sys.argv[4] if len(sys.argv) > 4 else "result.csv"
     print(
-        f"Calling property search for city = {arg_city} and total pages = {arg_total_pages}, doing",
-        "'with details'" if arg_do_search_with_detail else "'without detail',",
+        f"Calling property search for city = {arg_city} and total pages = {arg_total_pages}, searching",
+        "'with detail'" if arg_do_search_with_detail else "'without detail',",
         f"resulting in the output file {arg_output_file} ...",
     )
 
@@ -76,8 +76,11 @@ def main():
         else search_without_detail(city=arg_city, total_pages=arg_total_pages)
     )
     csv = format_csv(search_result)
-    with open(arg_output_file, "w+", encoding="utf-8") as csv_file:
-        csv_file.write(csv)
+    if csv:
+        with open(arg_output_file, "w+", encoding="utf-8") as csv_file:
+            csv_file.write(csv)
+    else:
+        print("No result!")
 
 
 if __name__ == "__main__":

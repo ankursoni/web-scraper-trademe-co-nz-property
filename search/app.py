@@ -19,10 +19,7 @@ def search_without_detail(city=core.DEFAULT_CITY, total_pages=1):
     """Function on 'search-without-detail/<city>/<total_pages' searching
     without property detail."""
     result = core.search_without_detail(city=city, total_pages=total_pages)
-    csv = core.format_csv(result)
-    response = flask.make_response(csv, 200)
-    response.mimetype = "text/plain"
-    return response
+    return _make_response(result)
 
 
 @app.route("/search-with-detail")
@@ -31,9 +28,17 @@ def search_with_detail(city=core.DEFAULT_CITY, total_pages=1):
     """Function on '/search-with-detail/<city>/<total_pages>' searching
     with property detail."""
     result = core.search_with_detail(city=city, total_pages=total_pages)
+    return _make_response(result)
+
+
+def _make_response(result):
     csv = core.format_csv(result)
-    response = flask.make_response(csv, 200)
-    response.mimetype = "text/plain"
+    response = None
+    if csv:
+        response = flask.make_response(csv, 200)
+        response.mimetype = "text/plain"
+    else:
+        response = flask.make_response("", 204)
     return response
 
 
