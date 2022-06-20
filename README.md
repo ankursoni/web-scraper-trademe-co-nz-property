@@ -21,6 +21,7 @@
 - Python v3.9.13
 - Flask
 - Docker
+- Helm chart & Kubernetes
 
 
 ## Getting Started
@@ -29,7 +30,8 @@ To get a local copy up and running, follow these simple example steps.
 
 ### Prerequisites
 Python v3.9.13  
-Optionally, Docker
+Docker (optional)
+Helm chart and Kubernetes (optional)
 
 ### Setup
 ```sh
