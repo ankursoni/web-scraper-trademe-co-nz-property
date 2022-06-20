@@ -85,6 +85,7 @@ docker rm webscrappe
 4. Or, run in kubernetes cluster
 ```sh
 # upgrade or install helm chart, if not preset
+cd .deploy/helm
 helm upgrade -i webscrappe-trademe-co-nz-property webscrappe-trademe-co-nz-property \
 	-n webscrappe --create-namespace
 
