@@ -2,9 +2,16 @@
 
 [![build](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/ci.yml/badge.svg)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property/branch/main/graph/badge.svg)](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property)
-[![License](https://img.shields.io/github/license/ankursoni/webscrappe-trademe-co-nz-property)](/LICENSE)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![License](https://img.shields.io/github/license/ankursoni/webscrappe-trademe-co-nz-property)](/LICENSE)
 <!-- [![Build Status](https://img.shields.io/github/workflow/status/ankursoni/webscrappe-trademe-co-nz-property/build)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/ci.yml) -->
+
+[![Github](https://img.shields.io/github/followers/ankursoni?style=social)](https://github.com/ankursoni)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ankursoniji)
+
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40ankursoniji)](https://twitter.com/ankursoniji)
+
 
 > Web scrapping project for trademe.co.nz/property
 
@@ -111,7 +118,7 @@ TODO:
 👤 **Ankur Soni**
 
 - GitHub: [@ankursoni](https://github.com/ankursoni)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/ankursoniji)
+- LinkedIn: [@ankursoniji](https://linkedin.com/in/ankursoniji)
 - Twitter: [@ankursoniji](https://twitter.com/ankursoniji)
 
 
