@@ -1,7 +1,7 @@
 # webscrappe-trademe-co-nz-property
 
-[![build](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml/badge.svg)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property/branch/main/graph/badge.svg)](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property)
+[![Build](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml/badge.svg)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml)
+[![CodeCov](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property/branch/main/graph/badge.svg)](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License](https://img.shields.io/github/license/ankursoni/webscrappe-trademe-co-nz-property)](/LICENSE)
 <!-- [![Build Status](https://img.shields.io/github/workflow/status/ankursoni/webscrappe-trademe-co-nz-property/build)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml) -->
@@ -30,7 +30,7 @@ To get a local copy up and running, follow these simple example steps.
 
 ### Prerequisites
 Python v3.9.13  
-Docker (optional)
+Docker (optional)  
 Helm chart and Kubernetes (optional)
 
 ### Setup
@@ -95,6 +95,7 @@ kubectl delete namespace webscrappe
 ```
 
 ### Usage
+TODO:
 When running as a command line interface (cli)
 ```sh
 # argument 1 = city
@@ -106,10 +107,11 @@ python -m search.main auckland 1 false result.csv
 ```
 
 When running as an api, use the following endpoints:
+TODO:
 1. 'http://`{domain name}`/search-without-detail/`{city}`/`{total number of pages}`' searching without property detail.
 ```sh
 # example
-curl http://localhost:8080/search-with-detail/auckland/1
+curl http://localhost:8080/search-without-detail/auckland/1
 ```
 2. 'http://`{domain name}`/search-with-detail/`{city}`/`{total number of pages}`' searching with property detail.
 ```sh
@@ -146,13 +148,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 
 ## 📝 License
