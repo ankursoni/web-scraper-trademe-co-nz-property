@@ -1,5 +1,3 @@
-name: Docker
-
 on:
   pull_request:
     branches:

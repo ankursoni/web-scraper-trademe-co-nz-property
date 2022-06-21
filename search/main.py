@@ -56,7 +56,7 @@ def format_csv(property_list) -> str:
     return dataframe.to_csv(sep="|")
 
 
-def main():
+def main() -> None:
     """Entry point if called as an executable."""
     arg_city = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_CITY
     arg_total_pages = int(sys.argv[2]) if len(sys.argv) > 2 else 1
