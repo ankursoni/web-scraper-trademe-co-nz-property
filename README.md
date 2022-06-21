@@ -1,10 +1,10 @@
 # webscrappe-trademe-co-nz-property
 
-[![build](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/ci.yml/badge.svg)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/ci.yml)
+[![build](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml/badge.svg)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property/branch/main/graph/badge.svg)](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License](https://img.shields.io/github/license/ankursoni/webscrappe-trademe-co-nz-property)](/LICENSE)
-<!-- [![Build Status](https://img.shields.io/github/workflow/status/ankursoni/webscrappe-trademe-co-nz-property/build)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/ci.yml) -->
+<!-- [![Build Status](https://img.shields.io/github/workflow/status/ankursoni/webscrappe-trademe-co-nz-property/build)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml) -->
 
 [![Github](https://img.shields.io/github/followers/ankursoni?style=social)](https://github.com/ankursoni)
 

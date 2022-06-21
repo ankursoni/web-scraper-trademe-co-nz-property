@@ -1,7 +1,8 @@
-import search.main
+import search.property_search
+import search.property_detail
 
 
-class TestPropertySearch:
+class TestSearchProperty:
 
     property_search_result = None
 
@@ -43,21 +44,21 @@ class TestPropertySearch:
         )
         return response
 
-    def test_property_search_001_fetch(self, mocker):
+    def test_property_search_001_fetch(_, mocker):
         # arrange
         mocker.patch.object(
             search.main,
             "DEFAULT_HIT_DELAY_SECONDS",
-            TestPropertySearch.DEFAULT_HIT_DELAY_SECONDS,
+            TestSearchProperty.DEFAULT_HIT_DELAY_SECONDS,
         )
         mocker.patch(
             "search.property_search.requests.get",
-            TestPropertySearch.mock_property_search_001_requests_get,
+            TestSearchProperty.mock_property_search_001_requests_get,
         )
         spy_requests_get = mocker.spy(search.property_search.requests, "get")
 
         # act
-        result = search.main.property_search_fetch(
+        result = search.property_search.property_search_fetch(
             domain_url="https://www.trademe.co.nz", city="auckland", total_pages=1
         )
 
@@ -99,26 +100,26 @@ class TestPropertySearch:
         assert result[-1].land_area_sqm == "921  m2"
         assert result[-1].asking_price == "Price by negotiation"
 
-        TestPropertySearch.property_search_result = result
+        TestSearchProperty.property_search_result = result
 
-    def test_propertydetail_001_fetch(self, mocker):
+    def test_propertydetail_001_fetch(_, mocker):
         # arrange
         mocker.patch.object(
             search.main,
             "DEFAULT_HIT_DELAY_SECONDS",
-            TestPropertySearch.DEFAULT_HIT_DELAY_SECONDS,
+            TestSearchProperty.DEFAULT_HIT_DELAY_SECONDS,
         )
         mocker.patch(
             "search.property_detail.requests.get",
-            TestPropertySearch.mock_property_detail_001_requests_get,
+            TestSearchProperty.mock_property_detail_001_requests_get,
         )
         spy_requests_get = mocker.spy(search.property_detail.requests, "get")
 
         # act
-        result = search.main.property_detail_fetch(
+        result = search.property_detail.property_detail_fetch(
             link="https://www.trademe.co.nz/a/property/residential/sale/auckland/manukau-city/the-gardens/listing/3615355083",
-            property_search=TestPropertySearch.property_search_result[19]
-            if TestPropertySearch.property_search_result
+            property_search=TestSearchProperty.property_search_result[19]
+            if TestSearchProperty.property_search_result
             else None,
         )
 
@@ -165,24 +166,24 @@ PLEASE NOTE: Specified floor and land area size have been obtained from but not 
 """
         )
 
-    def test_propertydetail_002_fetch(self, mocker):
+    def test_propertydetail_002_fetch(_, mocker):
         # arrange
         mocker.patch.object(
             search.main,
             "DEFAULT_HIT_DELAY_SECONDS",
-            TestPropertySearch.DEFAULT_HIT_DELAY_SECONDS,
+            TestSearchProperty.DEFAULT_HIT_DELAY_SECONDS,
         )
         mocker.patch(
             "search.property_detail.requests.get",
-            TestPropertySearch.mock_property_detail_002_requests_get,
+            TestSearchProperty.mock_property_detail_002_requests_get,
         )
         spy_requests_get = mocker.spy(search.property_detail.requests, "get")
 
         # act
-        result = search.main.property_detail_fetch(
+        result = search.property_detail.property_detail_fetch(
             link="https://www.trademe.co.nz/a/property/residential/sale/auckland/rodney/gulf-harbour/listing/3611361622",
-            property_search=TestPropertySearch.property_search_result[21]
-            if TestPropertySearch.property_search_result
+            property_search=TestSearchProperty.property_search_result[21]
+            if TestSearchProperty.property_search_result
             else None,
         )
 
@@ -227,24 +228,24 @@ A very unique property in a fantastic location, this is a must view, call Sharon
 """
         )
 
-    def test_propertydetail_003_fetch(self, mocker):
+    def test_propertydetail_003_fetch(_, mocker):
         # arrange
         mocker.patch.object(
             search.main,
             "DEFAULT_HIT_DELAY_SECONDS",
-            TestPropertySearch.DEFAULT_HIT_DELAY_SECONDS,
+            TestSearchProperty.DEFAULT_HIT_DELAY_SECONDS,
         )
         mocker.patch(
             "search.property_detail.requests.get",
-            TestPropertySearch.mock_property_detail_003_requests_get,
+            TestSearchProperty.mock_property_detail_003_requests_get,
         )
         spy_requests_get = mocker.spy(search.property_detail.requests, "get")
 
         # act
-        result = search.main.property_detail_fetch(
+        result = search.property_detail.property_detail_fetch(
             link="https://www.trademe.co.nz/a/property/new-homes/house-land/auckland/rodney/milldale/listing/3615362032",
-            property_search=TestPropertySearch.property_search_result[18]
-            if TestPropertySearch.property_search_result
+            property_search=TestSearchProperty.property_search_result[18]
+            if TestSearchProperty.property_search_result
             else None,
         )
 
