@@ -40,7 +40,7 @@ def property_detail_fetch(link, property_search=None) -> list[PropertySearch]:
     property_listing_attributes = soup.find("tm-property-listing-attributes")
 
     # extract property type, rateable value, parking type, in the area, property id
-    # and agency reference
+    # agency reference and broadband options
     property_detail = PropertyDetail()
     rows = property_listing_attributes.find_all("tr")
     for row in rows:
