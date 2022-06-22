@@ -63,7 +63,7 @@ def main() -> None:
     arg_do_search_with_detail = (
         distutils.util.strtobool(sys.argv[3]) if len(sys.argv) > 3 else False
     )
-    arg_output_file = sys.argv[4] if len(sys.argv) > 4 else "result.csv"
+    arg_output_file = sys.argv[4] if len(sys.argv) > 4 else "result.psv"
     print(
         f"Calling property search for city = {arg_city} and",
         f"total pages = {arg_total_pages}, searching",
@@ -76,10 +76,10 @@ def main() -> None:
         if arg_do_search_with_detail
         else search_without_detail(city=arg_city, total_pages=arg_total_pages)
     )
-    csv = format_csv(search_result)
-    if csv:
-        with open(arg_output_file, "w+", encoding="utf-8") as csv_file:
-            csv_file.write(csv)
+    psv = format_csv(search_result)
+    if psv:
+        with open(arg_output_file, "w+", encoding="utf-8") as psv_file:
+            psv_file.write(psv)
     else:
         print("No result!")
 
