@@ -67,10 +67,10 @@ FLASK_ENV=development python3 -m search.app
 # build docker image
 docker build -t webscrappe-trademe-co-nz-property:mvp .
 
-# run docker
+# run docker container
 docker run -d -p 8080:8080 --name webscrappe webscrappe-trademe-co-nz-property:mvp
 
-# stop and remove docker
+# stop and remove docker container
 docker stop webscrappe
 docker rm webscrappe
 ```
@@ -100,7 +100,6 @@ python -m search.main auckland 1 false result.psv
 NOTE: the output result.psv file needs to be imported with a custom Delimiter or Separator type - `|` in the import CSV wizard.
 
 When running as an api, use the following endpoints:
-TODO:
 1. 'http://`{domain name}:{port}`/search-without-detail/`{city}`/`{total number of pages}`' searching without property detail.
 ```sh
 # example
@@ -153,6 +152,7 @@ The fields in PSV are mapped as follows:
 
 Another example property detail page shows property as follows:
 ![property-detail-2](./docs/images/property-detail-2.png)
+More fields in PSV are mapped as follows:
 - rateable_value  
 ![property-detail-2-rateable-value](./docs/images/property-detail-2-rateable-value.png)
 - agency_reference  
