@@ -38,6 +38,8 @@ def property_detail_fetch(link, property_search=None) -> list[PropertySearch]:
     # parse the web response
     soup = BeautifulSoup(response.content, "html.parser")
     property_listing_attributes = soup.find("tm-property-listing-attributes")
+    if not property_listing_attributes:
+        raise Exception(f"Error: no property detail section found for the link: {link}")
 
     # extract property type, rateable value, parking type, in the area, property id
     # agency reference and broadband options
