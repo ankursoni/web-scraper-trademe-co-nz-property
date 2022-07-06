@@ -32,7 +32,7 @@ def search_with_detail(city=core.DEFAULT_CITY, total_pages=1):
 
 
 def _make_response(result):
-    csv = core.format_csv(result)
+    csv = core.format_psv(result)
     response = None
     if csv:
         response = flask.make_response(csv, 200)
