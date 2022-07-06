@@ -92,7 +92,7 @@ class TestSearchMain:
         item_list = [item()]
 
         # act
-        result = search.main.format_csv(property_list=item_list)
+        result = search.main.format_psv(property_list=item_list)
 
         # assert
         assert result == "sno|test1|test2\n1|1|2\n"
