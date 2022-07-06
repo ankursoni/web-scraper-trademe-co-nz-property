@@ -55,7 +55,8 @@ pylint ./search
 # argument 2 = total number of pages
 # argument 3 = true or false (default) to do search 'with detail' or 'without detail'
 # argument 4 = output file (default = result.psv)
-# e.g. python -m search.main <city> <total pages> <true or false> <file.psv>
+# argument 5 = true or false (default) to enable debug mode logging
+# e.g. python -m search.main <city> <total pages> <true or false> <file.psv> <true or false>
 python -m search.main auckland 1 false result.psv
 ```
 2. Or, run as web api server:
@@ -94,7 +95,8 @@ When running as a command line interface (cli):
 # argument 2 = total number of pages
 # argument 3 = true or false (default) to do search 'with detail' or 'without detail'
 # argument 4 = output file (default = result.psv)
-# e.g. python -m search.main <city> <total pages> <true or false> <file.psv>
+# argument 5 = true or false (default) to enable debug mode logging
+# e.g. python -m search.main <city> <total pages> <true or false> <file.psv> <true or false>
 python -m search.main auckland 1 false result.psv
 ```
 NOTE: the output result.psv file needs to be imported with a custom Delimiter or Separator type - `|` in the import CSV wizard.
