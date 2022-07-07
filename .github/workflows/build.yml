@@ -29,4 +29,4 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           files: ./coverage.xml
-          secrets: ${{ secrets.CODECOV_TOKEN }}
+          token: ${{ secrets.CODECOV_TOKEN }}
