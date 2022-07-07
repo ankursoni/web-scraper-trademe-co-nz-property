@@ -1,7 +1,7 @@
 # webscrappe-trademe-co-nz-property
 
 [![Build](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml/badge.svg)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml)
-[![CodeCov](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property/branch/main/graph/badge.svg)](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property)
+[![codecov](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property/branch/main/graph/badge.svg?token=ZZWMD4FB93)](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License](https://img.shields.io/github/license/ankursoni/webscrappe-trademe-co-nz-property)](/LICENSE)
 
