@@ -25,7 +25,7 @@ jobs:
         with:
           token_format: "access_token"
           workload_identity_provider: "projects/1011289596614/locations/global/workloadIdentityPools/github-ci-pool/providers/github-ci-provider"
-          service_account: "github-ci-sa"
+          service_account: "github-ci-sa@ai-hospital-services-prototype.iam.gserviceaccount.com"
       - name: Login to GCR
         uses: docker/login-action@v2
         with:
