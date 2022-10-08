@@ -1,12 +1,12 @@
-# webscrappe-trademe-co-nz-property
+# web-scraper-trademe-co-nz-property
 
-[![Build](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml/badge.svg)](https://github.com/ankursoni/webscrappe-trademe-co-nz-property/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property/branch/main/graph/badge.svg?token=ZZWMD4FB93)](https://codecov.io/gh/ankursoni/webscrappe-trademe-co-nz-property)
+[![Build](https://github.com/ankursoni/web-scraper-trademe-co-nz-property/actions/workflows/build.yml/badge.svg)](https://github.com/ankursoni/web-scraper-trademe-co-nz-property/actions/workflows/build.yml)
+[![codecov](https://codecov.io/gh/ankursoni/web-scraper-trademe-co-nz-property/branch/main/graph/badge.svg?token=ZZWMD4FB93)](https://codecov.io/gh/ankursoni/web-scraper-trademe-co-nz-property)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![License](https://img.shields.io/github/license/ankursoni/webscrappe-trademe-co-nz-property)](/LICENSE)
+[![License](https://img.shields.io/github/license/ankursoni/web-scraper-trademe-co-nz-property)](/LICENSE)
 
 
-> Web scrapping project for trademe.co.nz/property
+> Web scraper for https://trademe.co.nz/property
 
 
 ## Built With
@@ -177,13 +177,6 @@ pytest -v --cov=search
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ankursoniji)
 
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40ankursoniji)](https://twitter.com/ankursoniji)
-
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
 
 
 ## Show your support
