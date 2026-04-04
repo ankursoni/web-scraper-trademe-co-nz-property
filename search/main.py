@@ -1,11 +1,10 @@
-""" Module for command line interface (cli). """
+"""Module for command line interface (cli)."""
 
 from __future__ import annotations
 
-import distutils
+import asyncio
 import logging
 import sys
-from time import sleep
 
 import pandas as pd
 import structlog
@@ -21,7 +20,7 @@ from .property_search import (
 )
 
 
-def search_without_detail(
+async def search_without_detail(
     domain_url=DEFAULT_DOMAIN_URL, city=DEFAULT_CITY, total_pages=1
 ) -> list[PropertySearch]:
     """Function searching without property detail."""
@@ -33,10 +32,10 @@ def search_without_detail(
         total_pages=total_pages,
     )
 
-    result = property_search_fetch(
+    result = await property_search_fetch(
         domain_url=domain_url, city=city, total_pages=total_pages
     )
-    sleep(DEFAULT_HIT_DELAY_SECONDS)
+    await asyncio.sleep(DEFAULT_HIT_DELAY_SECONDS)
     logger.info(
         "Completed search without detail",
         domain_url=domain_url,
@@ -47,7 +46,7 @@ def search_without_detail(
     return result
 
 
-def search_with_detail(
+async def search_with_detail(
     domain_url=DEFAULT_DOMAIN_URL, city=DEFAULT_CITY, total_pages=1
 ) -> list[PropertyDetail]:
     """Function searching with property detail."""
@@ -59,16 +58,16 @@ def search_with_detail(
         total_pages=total_pages,
     )
 
-    search = property_search_fetch(
+    search = await property_search_fetch(
         domain_url=domain_url, city=city, total_pages=total_pages
     )
     result = []
     for item in search:
         result.append(
             # fetch property detail for each property in search result
-            property_detail_fetch(link=item.link, property_search=item)
+            await property_detail_fetch(link=item.link, property_search=item)
         )
-        sleep(DEFAULT_HIT_DELAY_SECONDS)
+        await asyncio.sleep(DEFAULT_HIT_DELAY_SECONDS)
     logger.info(
         "Completed search with detail",
         domain_url=domain_url,
@@ -94,17 +93,30 @@ def format_psv(property_list) -> str:
     return result
 
 
-def main() -> None:
-    """Entry point if called as an executable."""
+def _strtobool(val: str) -> bool:
+    """Converts a string representation of truth to a boolean.
+
+    True values are 'y', 'yes', 't', 'true', 'on', and '1'.
+    False values are 'n', 'no', 'f', 'false', 'off', '0'.
+
+    Raises ValueError if 'val' is anything else.
+    """
+    val = val.lower()
+    if val in ("y", "yes", "t", "true", "on", "1"):
+        return True
+    if val in ("n", "no", "f", "false", "off", "0"):
+        return False
+    raise ValueError(f"invalid truth value {val!r}")
+
+
+async def _async_main() -> None:
     logger = get_logger()
     # parse cli arguments
     arg_city = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_CITY
     arg_total_pages = int(sys.argv[2]) if len(sys.argv) > 2 else 1
-    arg_do_search_with_detail = (
-        distutils.util.strtobool(sys.argv[3]) if len(sys.argv) > 3 else False
-    )
+    arg_do_search_with_detail = _strtobool(sys.argv[3]) if len(sys.argv) > 3 else False
     arg_output_file = sys.argv[4] if len(sys.argv) > 4 else "result.psv"
-    debug_mode = distutils.util.strtobool(sys.argv[5]) if len(sys.argv) > 5 else False
+    debug_mode = _strtobool(sys.argv[5]) if len(sys.argv) > 5 else False
     print(
         f"Calling property search for city = {arg_city} and",
         f"total pages = {arg_total_pages}, searching",
@@ -122,9 +134,9 @@ def main() -> None:
 
     # execute search
     search_result = (
-        search_with_detail(city=arg_city, total_pages=arg_total_pages)
+        await search_with_detail(city=arg_city, total_pages=arg_total_pages)
         if arg_do_search_with_detail
-        else search_without_detail(city=arg_city, total_pages=arg_total_pages)
+        else await search_without_detail(city=arg_city, total_pages=arg_total_pages)
     )
 
     # format into csv file
@@ -144,6 +156,11 @@ def main() -> None:
             )
     else:
         print("No result!")
+
+
+def main() -> None:
+    """Entry point if called as an executable."""
+    asyncio.run(_async_main())
 
 
 if __name__ == "__main__":

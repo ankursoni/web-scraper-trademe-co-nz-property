@@ -26,7 +26,8 @@
                 "--cov=search",
                 "-v"
             ],
-            "justMyCode": true
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}/tests"
         },
         {
             "name": "Python: Flask",

@@ -10,8 +10,7 @@
 
 
 ## Built With
-
-- Python v3.9.13
+- Python v3.13
 - Flask
 - Docker
 - Helm chart & Kubernetes
@@ -22,14 +21,14 @@
 To get a local copy up and running, follow these simple example steps.
 
 ### Prerequisites
-Python v3.9.13  
+Python v3.13
 Docker (optional)  
 Helm chart and Kubernetes (optional)
 
 ### Setup
 ```sh
 # create a virtual environment
-# assuming you have "python3 --version" = "Python 3.9.13" installed in the current terminal session
+# assuming you have "python3 --version" = "Python 3.13" installed in the current terminal session
 python3 -m venv ./venv
 
 # activate virtual environment

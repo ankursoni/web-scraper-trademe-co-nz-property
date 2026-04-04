@@ -1,11 +1,11 @@
-""" Module for property detail. """
+"""Module for property detail."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 
-import requests
 from bs4 import BeautifulSoup
+from playwright.async_api import async_playwright
 from structlog import get_logger
 
 from .property_search import PropertySearch
@@ -27,7 +27,7 @@ class PropertyDetail(PropertySearch):
     description: str = None
 
 
-def property_detail_fetch(link, property_search=None) -> list[PropertySearch]:
+async def property_detail_fetch(link, property_search=None) -> list[PropertySearch]:
     """Function to fetch property detailed search result."""
     logger = get_logger()
     logger.info(
@@ -38,26 +38,21 @@ def property_detail_fetch(link, property_search=None) -> list[PropertySearch]:
 
     logger.info("Starting web request", url=link)
     # make a web request for property detail
-    response = requests.get(url=link)
-    if response.status_code != 200:
-        logger.error(
-            "Completed web request",
-            url=link,
-            response_status_code=response.status_code,
-        )
-        raise Exception(
-            f"Error: request failed with response status code: {response.status_code}"
-        )
-    logger.info(
-        "Completed web request", url=link, response_status_code=response.status_code
-    )
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        bpage = await browser.new_page()
+        await bpage.goto(link)
+        await bpage.wait_for_selector("tm-property-listing-attributes", timeout=30000)
+        content = await bpage.content()
+        await browser.close()
+    logger.info("Completed web request", url=link)
 
     # parse the web response
     logger.info(
         "Starting web response parse",
         url=link,
     )
-    soup = BeautifulSoup(response.content, "html.parser")
+    soup = BeautifulSoup(content, "html.parser")
     property_listing_attributes = soup.find("tm-property-listing-attributes")
     logger.debug(
         "Starting property listing attributes parse",
